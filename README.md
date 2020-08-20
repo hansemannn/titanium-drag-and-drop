@@ -2,6 +2,8 @@
 
 Native cross platform "Drag and Drop" functionality in Axway Titanium.
 
+<img src="./example.gif" height="500" alt="Example video" />
+
 ## Requirements
 
 - iOS 11+
