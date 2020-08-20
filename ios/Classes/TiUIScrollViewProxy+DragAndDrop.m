@@ -5,10 +5,11 @@
 //  Created by Hans Knoechel on 17.08.20.
 //
 
-#import "TiUIViewProxy+DragAndDrop.h"
+#import "TiUIScrollViewProxy+DragAndDrop.h"
 #import "TiDraganddropModule.h"
+#import "TiUIScrollView.h"
 
-@implementation TiUIViewProxy (DragAndDrop)
+@implementation TiUIScrollViewProxy (DragAndDrop)
 
 // MARK: Public APIs
 
@@ -24,8 +25,8 @@
   UIDragInteraction *dragInteraction = [[UIDragInteraction alloc] initWithDelegate:[TiDraganddropModule instance]];
   dragInteraction.enabled = YES;
 
-  [view addInteraction:dragInteraction];
-  view.userInteractionEnabled = YES;
+  [[self scrollView] addInteraction:dragInteraction];
+  [self scrollView].userInteractionEnabled = YES;
 }
 
 - (void)setCanDrop:(NSNumber *)value
@@ -38,7 +39,14 @@
   }
 
   UIDropInteraction *dropInteraction = [[UIDropInteraction alloc] initWithDelegate:[TiDraganddropModule instance]];
-  [view addInteraction:dropInteraction];
+  [[self scrollView] addInteraction:dropInteraction];
+}
+
+// MARK: Utils
+
+- (__kindof TiUIScrollView *)scrollView
+{
+  return (TiUIScrollView *)[self view];
 }
 
 @end

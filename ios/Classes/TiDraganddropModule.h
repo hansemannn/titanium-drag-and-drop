@@ -7,8 +7,18 @@
 
 #import "TiModule.h"
 
-@interface TiDraganddropModule : TiModule {
+@protocol TiDragAndDroppable <NSObject>
 
-}
+@required
+- (void)setCanDrag:(NSNumber *)value;
+
+@required
+- (void)setCanDrop:(NSNumber *)value;
+
+@end
+
+@interface TiDraganddropModule : TiModule  <UIDragInteractionDelegate, UIDropInteractionDelegate>
+
++ (TiDraganddropModule *)instance;
 
 @end

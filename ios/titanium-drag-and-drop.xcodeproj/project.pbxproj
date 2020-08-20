@@ -26,6 +26,8 @@
 		24DD6CFA1134B3F500162E58 /* TiDraganddropModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* TiDraganddropModule.m */; };
 		24DE9E1111C5FE74003F90F6 /* TiDraganddropModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* TiDraganddropModuleAssets.h */; };
 		24DE9E1211C5FE74003F90F6 /* TiDraganddropModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* TiDraganddropModuleAssets.m */; };
+		3A5AF83524EE301E00BC731C /* TiUIScrollViewProxy+DragAndDrop.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A5AF83324EE301E00BC731C /* TiUIScrollViewProxy+DragAndDrop.h */; };
+		3A5AF83624EE301E00BC731C /* TiUIScrollViewProxy+DragAndDrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AF83424EE301E00BC731C /* TiUIScrollViewProxy+DragAndDrop.m */; };
 		3AE6E49624EA68AC006A403E /* TiUIViewProxy+DragAndDrop.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AE6E49424EA68AC006A403E /* TiUIViewProxy+DragAndDrop.h */; };
 		3AE6E49724EA68AC006A403E /* TiUIViewProxy+DragAndDrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6E49524EA68AC006A403E /* TiUIViewProxy+DragAndDrop.m */; };
 		AA747D9F0F9514B9006C5449 /* TiDraganddrop_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TiDraganddrop_Prefix.pch */; };
@@ -48,6 +50,8 @@
 		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
 		24DE9E0F11C5FE74003F90F6 /* TiDraganddropModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiDraganddropModuleAssets.h; path = Classes/TiDraganddropModuleAssets.h; sourceTree = "<group>"; };
 		24DE9E1011C5FE74003F90F6 /* TiDraganddropModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiDraganddropModuleAssets.m; path = Classes/TiDraganddropModuleAssets.m; sourceTree = "<group>"; };
+		3A5AF83324EE301E00BC731C /* TiUIScrollViewProxy+DragAndDrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUIScrollViewProxy+DragAndDrop.h"; path = "Classes/TiUIScrollViewProxy+DragAndDrop.h"; sourceTree = "<group>"; };
+		3A5AF83424EE301E00BC731C /* TiUIScrollViewProxy+DragAndDrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUIScrollViewProxy+DragAndDrop.m"; path = "Classes/TiUIScrollViewProxy+DragAndDrop.m"; sourceTree = "<group>"; };
 		3AE6E49424EA68AC006A403E /* TiUIViewProxy+DragAndDrop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TiUIViewProxy+DragAndDrop.h"; path = "Classes/TiUIViewProxy+DragAndDrop.h"; sourceTree = "<group>"; };
 		3AE6E49524EA68AC006A403E /* TiUIViewProxy+DragAndDrop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "TiUIViewProxy+DragAndDrop.m"; path = "Classes/TiUIViewProxy+DragAndDrop.m"; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TiDraganddrop_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiDraganddrop_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -101,8 +105,8 @@
 				24DE9E1011C5FE74003F90F6 /* TiDraganddropModuleAssets.m */,
 				24DD6CF71134B3F500162E58 /* TiDraganddropModule.h */,
 				24DD6CF81134B3F500162E58 /* TiDraganddropModule.m */,
-				3AE6E49424EA68AC006A403E /* TiUIViewProxy+DragAndDrop.h */,
-				3AE6E49524EA68AC006A403E /* TiUIViewProxy+DragAndDrop.m */,
+				3A5AF83724EE302100BC731C /* TiUIScrollViewProxy */,
+				3A5AF83224EE2FF300BC731C /* TiUIViewProxy */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -116,6 +120,24 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		3A5AF83224EE2FF300BC731C /* TiUIViewProxy */ = {
+			isa = PBXGroup;
+			children = (
+				3AE6E49424EA68AC006A403E /* TiUIViewProxy+DragAndDrop.h */,
+				3AE6E49524EA68AC006A403E /* TiUIViewProxy+DragAndDrop.m */,
+			);
+			name = TiUIViewProxy;
+			sourceTree = "<group>";
+		};
+		3A5AF83724EE302100BC731C /* TiUIScrollViewProxy */ = {
+			isa = PBXGroup;
+			children = (
+				3A5AF83324EE301E00BC731C /* TiUIScrollViewProxy+DragAndDrop.h */,
+				3A5AF83424EE301E00BC731C /* TiUIScrollViewProxy+DragAndDrop.m */,
+			);
+			name = TiUIScrollViewProxy;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -125,6 +147,7 @@
 			files = (
 				AA747D9F0F9514B9006C5449 /* TiDraganddrop_Prefix.pch in Headers */,
 				24DD6CF91134B3F500162E58 /* TiDraganddropModule.h in Headers */,
+				3A5AF83524EE301E00BC731C /* TiUIScrollViewProxy+DragAndDrop.h in Headers */,
 				3AE6E49624EA68AC006A403E /* TiUIViewProxy+DragAndDrop.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* TiDraganddropModuleAssets.h in Headers */,
 			);
@@ -201,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5AF83624EE301E00BC731C /* TiUIScrollViewProxy+DragAndDrop.m in Sources */,
 				3AE6E49724EA68AC006A403E /* TiUIViewProxy+DragAndDrop.m in Sources */,
 				24DD6CFA1134B3F500162E58 /* TiDraganddropModule.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* TiDraganddropModuleAssets.m in Sources */,
