@@ -10,16 +10,28 @@ Native cross platform "Drag and Drop" functionality in Axway Titanium.
 ## Example
 
 ```js
-var DragDrop = require('ti.draganddrop');
+import DragDrop from 'ti.draganddrop';
 
-var win = Ti.UI.createWindow({
+const win = Ti.UI.createWindow({
     backgroundColor: '#e0e0e0'
 });
 
-var dragView = Ti.UI.createView({ width: 100, height: 100, backgroundColor: 'red', borderRadius: 20, identifier: '123' });
-win.add(dragView);
+const dragView = Ti.UI.createView({
+	width: 100,
+	height: 100,
+	backgroundColor: 'red',
+	borderRadius: 20,
+	identifier: '123' // REQUIRED
+});
 
-var dropView = Ti.UI.createView({ height: 200, bottom: 0, backgroundColor: '#fff', identifier: '456' });
+const dropView = Ti.UI.createView({
+	height: 200,
+	bottom: 0,
+	backgroundColor: '#fff',
+	identifier: '456' // REQUIRED
+});
+
+win.add(dragView);
 win.add(dropView);
 
 DragDrop.addEventListener('drop', console.warn);
