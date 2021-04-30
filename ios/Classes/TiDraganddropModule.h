@@ -10,10 +10,10 @@
 @protocol TiDragAndDroppable <NSObject>
 
 @required
-- (void)setCanDrag:(NSNumber *)value;
+- (void)enableDragging:(id)unused;
 
 @required
-- (void)setCanDrop:(NSNumber *)value;
+- (void)enableDropping:(id)unused;
 
 @end
 

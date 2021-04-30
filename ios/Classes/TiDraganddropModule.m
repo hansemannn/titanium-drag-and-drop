@@ -78,9 +78,9 @@
 - (NSString *)identifierFromView:(id)view
 {
   if ([view isKindOfClass:[TiUIView class]]) {
-    return [[(TiUIView *)view proxy] valueForKey:@"identifier"];
+    return [((TiUIView *)view).proxy valueForKey:@"identifier"];
   } else if ([view isKindOfClass:[TiUIScrollViewImpl class]]) {
-    return [[(TiUIScrollView *)view proxy] valueForKey:@"identifier"];
+    return [((TiUIScrollView *)view).proxy valueForKey:@"identifier"];
   } else {
     NSLog(@"[ERROR] Cannot unwrap native view (probably not supported in this module so far)");
     return nil;
@@ -89,8 +89,10 @@
 
 + (TiDraganddropModule *)instance
 {
-  NSDictionary<NSString *, TiModule *> *modules = [TiApp.app.krollBridge valueForKey:@"modules"];
-  return (TiDraganddropModule *) modules[@"ti.draganddrop"];
+  NSDictionary<NSString *, TiModule *> *modules = [TiApp.app valueForKey:@"modules"];
+  TiDraganddropModule *instance = (TiDraganddropModule *) modules[@"TiDraganddropModule"];
+  
+  return instance;
 }
 
 @end

@@ -2,17 +2,17 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.0.0
+version: 2.0.0
 apiversion: 2
 architectures: arm64 x86_64
 description: titanium-drag-and-drop
 author: Hans Knoechel
 license: MIT
-copyright: Copyright (c) 2020 by Hans Knoechel
+copyright: Copyright (c) 2020-present by Hans Knoechel
 
 # these should not be edited
 name: titanium-drag-and-drop
 moduleid: ti.draganddrop
 guid: b8a04d3b-16c8-4f30-806e-de07b8ae9a6d
 platform: iphone
-minsdk: 9.0.0
+minsdk: 9.2.0

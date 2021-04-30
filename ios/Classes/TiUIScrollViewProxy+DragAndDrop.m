@@ -13,33 +13,29 @@
 
 // MARK: Public APIs
 
-- (void)setCanDrag:(NSNumber *)value
+- (void)enableDragging:(id)unused
 {
-  ENSURE_UI_THREAD(setCanDrag, value);
+  __weak typeof(self) weakSelf = self;
+  TiThreadPerformOnMainThread(^{
+    __strong typeof(self) strongSelf = weakSelf;
 
-  if ([self valueForKey:@"identifier"] == nil) {
-    DebugLog(@"[ERROR] Missing \"identifier\" property. Please set this property to identify a drag item");
-    return;
-  }
+    UIDragInteraction *dragInteraction = [[UIDragInteraction alloc] initWithDelegate:[TiDraganddropModule instance]];
+    dragInteraction.enabled = YES;
 
-  UIDragInteraction *dragInteraction = [[UIDragInteraction alloc] initWithDelegate:[TiDraganddropModule instance]];
-  dragInteraction.enabled = YES;
-
-  [[self scrollView] addInteraction:dragInteraction];
-  [self scrollView].userInteractionEnabled = YES;
+    [[strongSelf scrollView] addInteraction:dragInteraction];
+    [strongSelf scrollView].userInteractionEnabled = YES;
+  }, NO);
 }
 
-- (void)setCanDrop:(NSNumber *)value
+- (void)enableDropping:(id)unused
 {
-  ENSURE_UI_THREAD(setCanDrop, value);
+  __weak typeof(self) weakSelf = self;
+  TiThreadPerformOnMainThread(^{
+    __strong typeof(self) strongSelf = weakSelf;
 
-  if ([self valueForKey:@"identifier"] == nil) {
-    DebugLog(@"[ERROR] Missing \"identifier\" property. Please set this property to identify a drop item");
-    return;
-  }
-
-  UIDropInteraction *dropInteraction = [[UIDropInteraction alloc] initWithDelegate:[TiDraganddropModule instance]];
-  [[self scrollView] addInteraction:dropInteraction];
+    UIDropInteraction *dropInteraction = [[UIDropInteraction alloc] initWithDelegate:[TiDraganddropModule instance]];
+    [[strongSelf scrollView] addInteraction:dropInteraction];
+  }, NO);
 }
 
 // MARK: Utils
