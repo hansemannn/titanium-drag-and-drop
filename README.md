@@ -36,7 +36,10 @@ const dropView = Ti.UI.createView({
 win.add(dragView);
 win.add(dropView);
 
-DragDrop.addEventListener('drop', console.warn);
+DragDrop.addEventListener('drag', () => console.warn);
+DragDrop.addEventListener('drop', () => console.warn);
+DragDrop.addEventListener('dropenter', () => console.warn);
+DragDrop.addEventListener('dropexit', () => console.warn);
 
 win.addEventListener('postlayout', initializeDragAndDrop);
 win.open();

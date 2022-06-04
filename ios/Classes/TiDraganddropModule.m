@@ -31,6 +31,8 @@
 {
   NSString *value = [self identifierFromView:interaction.view];
 
+  [self fireEvent:@"drag" withObject:@{ @"identifier": value }];
+
   UIDragItem *item = [[UIDragItem alloc] initWithItemProvider:[[NSItemProvider alloc] initWithObject:value]];
   item.localObject = value;
 
@@ -71,6 +73,18 @@
       }];
     }, NO);
   }];
+}
+
+- (void)dropInteraction:(UIDropInteraction *)interaction sessionDidEnter:(id<UIDropSession>)session
+{
+  NSString *value = [self identifierFromView:interaction.view];
+  [self fireEvent:@"dropenter" withObject:@{ @"identifier": value }];
+}
+
+- (void)dropInteraction:(UIDropInteraction *)interaction sessionDidExit:(id<UIDropSession>)session
+{
+  NSString *value = [self identifierFromView:interaction.view];
+  [self fireEvent:@"dropexit" withObject:@{ @"identifier": value }];
 }
 
 #pragma mark Utils
