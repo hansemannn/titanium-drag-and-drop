@@ -52,9 +52,9 @@ function initializeDragAndDrop() {
 }
 ```
 
-## Difference to Axway's `Ti.DragDrop`
+## Difference to TiDev's `Ti.DragDrop`
 
-The [Ti.DragDrop](https://github.com/appcelerator-modules/ti.dragdrop) module works quite differently than this one. Major differences are:
+The [Ti.DragDrop](https://github.com/tidev/ti.dragdrop) module works quite differently than this one. Major differences are:
 - This module uses lightweight identifiers instead of proxy references that have to be stored in memory, resulting in better performance
 - This module support multiple drop destinations, e.g. for file explorer views
 - This module supports not only classic `Ti.UI.View` instances, but also the `Ti.UI.ScrollView`. Other views like `ImageView` and `Label` can
