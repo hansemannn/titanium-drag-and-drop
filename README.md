@@ -1,6 +1,6 @@
 # Titanium Drag and Drop
 
-Native cross platform "Drag and Drop" functionality in Axway Titanium.
+Native cross platform "Drag and Drop" functionality in Titanium.
 
 <img src="./example.gif" height="500" alt="Example video" />
 
